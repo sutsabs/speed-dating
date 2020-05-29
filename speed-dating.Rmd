@@ -1,7 +1,7 @@
 ---
-title: "Secret to getting Second Dates"
+title: "Dating Compatibility and Chemistry: Analysis on a Speed-Dating Experiment"
 author: "Utsab Shrestha"
-date: "May 25,2020"
+date: "November 23,2016"
 output: html_document
 knit: (function(input_file, encoding) {
   out_dir <- 'docs';
@@ -12,7 +12,7 @@ knit: (function(input_file, encoding) {
 
 ```{r setup, include=FALSE}
 
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE,warning = FALSE,message = FALSE, fig.align="center")
 setwd("~/Github Project R/speed-dating")
 library(fmsb)
 library(dplyr)
@@ -24,21 +24,35 @@ library(gridBase)
 library(scales)
 ```
 
+
 ---
 
+
+![](images/dating.png)
+
+
 ###Introduction
+
+<i>What makes people attractive? What is a single person looking in a potential partner? What gets people a second date?</i>
  
 ####Background
 
-In today's busy world, finding and dating a romantic partner seems more time consuming than ever. As a result, many people have turned to speed dating as a solution that allows one to meet and interact with a large number of potential partners in a short amount of time. In this report, we want to explore what people are looking for in their speed dating matches, what it takes to become successful in getting approvals from a potential partner, if there exist any gender differences, and if any other factors (such as the order you met your partner) influence peoples' decisions. Finally, we'd like to determine if people really know what they want by comparing their self-reported answers to what actually influences peoples' decisions. 
+
+
+With the advancement in science and technology, the world has changed drastically in last few decades, and so has the dating world. Studies show that dating is more popular than it used to be and it does make sense because the world population is growing at an alarming rate. However, there are various other factors to why dating has become popular than ever these days. People have more choices which makes them believe that they are going to get a better partner. Additionally, dating has become more accessible because of the advancement of technology that has made virtual or online dating possible. As a result, many people have turned to speed dating as a solution to meet and interact with a large number of potential partners in a short amount of time.
+
+In this report, we want to explore what people are looking for in their speed dating matches, what it takes to become successful in getting approvals from a potential partener and what incluences peoples' decisions. In general, what men are looking for in women? What features make men more desirable to women? Are people of same profession compatible or do opposites attract? These are some of the questions that I find interesting and I try to answer them through this data analysis project.
  
 
 ####The Data
-The data set we will explore in the project is named "Speed Dating Experiment", as found on Kaggle.com. It was compiled by professors Ray Fisman and Sheena Iyengar from Columbia Business School, originally used for their paper "Gender Differences in Mate Selection: Evidence From a Speed Dating Experiment." It was generated from a series of experimental speed dating events from 2002 to 2004 and includes data related to demographics, dating habits, lifestyle information, an attribute evaluation questionnaire taken when the participants sign up, and each participant's ratings for others during the 4 minute interactions. Finally, individuals were asked if they would like a second date with their partners and rated again on similar questions after the event, when matches have met with each other and dated for several times.
+The data for this project was obtained from the Kaggle website. It was compiled by professors Ray Fisman and Sheena Iyengar from Columbia Business School, originally used for their paper "Gender Differences in Mate Selection: Evidence From a Speed Dating Experiment." It was generated from a series of experimental speed dating events from 2002 to 2004 and includes data related to demographics, dating habits, lifestyle information, an attribute evaluation questionnaire taken when the participants sign up, and each participant's ratings for others during the 4 minute interactions. Finally, individuals were asked if they would like a second date with their partners and rated again on similar questions after the event, when matches have met with each other and dated for several times. Even though the data is more than a decade old, this data should still provide us with some interesting insights to human behavior when it comes to dating. 
+
+Some important data keys that represented each individual in the dates were: IID, ID, Gender, PID, Match, etc. which are described in the data dictionary. We also have information on fields of study, career choice, goals, preferences, interested activities that will help create a profile for each individual and then finally the ratings of their dates that is going to drive our analysis.
  
 ####Changes to the Data
-In several analyses, the participants were given different instructions. For example, in most of the events, participants were given 100 points to distribute to the 6 attributes to show their priority. Some groups, however, were asked to rank the importance of the attributes on a 1-10 scale. Additionally, some participants' scores do not add up to 100. In both cases, the data has been scaled to form a 0-100 distribution like all other participants.
+In several analyses, the participants were given different instructions. For example, in most of the events, participants were given 100 points to distribute to the 6 attributes to show their priority. Some groups, however, were asked to rank the importance of the attributes on a 1-10 scale. Additionally, some participants' scores do not add up to 100. In both cases, the data has been scaled to form a 0-100 distribution like all other participants. There were several people who did not fill out all the information, for instance, 63 people did not fill out fields or 89 people did not fill out careers. Fields were extracted from the field codes. Similarly, there were lots of features that had values missing which had to be removed for proper analysis.
  
+
 ---
 
 ###What Are Participants Looking For in Their Matches
@@ -524,7 +538,6 @@ popViewport()
 Both men and women can predict what the opposite sex are looking for in their partners to a certain degree.
 
 
-####Caveat
 
 We must note that all of the answers here are based on a survey conducted before the actual speed dating event. The responses provided are based on what people "say" they want, and we will compare this with the next analysis to see if people's decisions are consistent with their answers.
 
